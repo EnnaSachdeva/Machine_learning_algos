@@ -7,19 +7,15 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 
-df = pd.read_csv("/home/enna/Desktop/machine_learning_algos/Datasets/winequality-red.csv")
+df = pd.read_csv("/home/aadi-z640/machine_learning_algos/Datasets/winequality-red.csv")
 
 # wine quality is a regression problem/ classification problem: quality is a real number between 0 to 10
-quality_mapping = {
-    3: 0,
-    4: 1,
-    5: 2,
-    6: 3,
-    7: 4,
-    8: 5
-}
-
-
+quality_mapping = {3: 0,
+                    4: 1,
+                    5: 2,
+                    6: 3,
+                    7: 4,
+                    8: 5}
 
 df.loc[:, "quality"] = df.quality.map(quality_mapping)
 
@@ -30,7 +26,6 @@ df_test = df.tail(599) # testing data
 
 train_accuracies = [0.5]
 test_accuracies = [0.5]
-
 
 for depth in range(1, 25):
 
